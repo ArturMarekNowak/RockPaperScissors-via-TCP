@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RockPaperScissors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="500">
+        Title="MainWindow" Height="550" Width="500">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
@@ -24,7 +24,19 @@
             <RowDefinition Height="400*"/>
             <RowDefinition Height="200*"/>
             <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
+        <Label x:Name="ConnectionLog"
+               Content="Connection: ESTABLISHED to 127.0.0.1 "
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontSize="10" 
+               Grid.Row="5"
+               Grid.Column="1" 
+               Margin="0.4,0.4,0,0.2" 
+               Grid.ColumnSpan="6" Width="400" Height="21"/>
         <Label x:Name="Score"
                Content="Score: 0"
                HorizontalAlignment="Center"
@@ -32,7 +44,17 @@
                FontSize="30" 
                Grid.Row="1"
                Grid.Column="1" 
-               Margin="10.4,10.2,9.6,19.4" 
+               Margin="10.0,10.0,10.0,10.0" 
+               Grid.ColumnSpan="4" Width="252" Height="52"/>
+        <Label x:Name="Result"
+               Content="You Win"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               HorizontalContentAlignment="Center"
+               FontSize="30" 
+               Grid.Row="2"
+               Grid.Column="2" 
+               Margin="10.0,10.0,10.0,10.0" 
                Grid.ColumnSpan="4" Width="252" Height="52"/>
         <Label x:Name="ResultPlayer"
                Content="-"
@@ -55,28 +77,28 @@
         <Button x:Name="Rock"
                 Click="RockPaperScissorButton"
                 Content="Rock"
-                Margin="5.6,4.8,5.2,5.2"
+                Margin="10.0,10.0,10.0,10.0" 
                 Grid.Row="4"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"/>
         <Button x:Name="Paper"
                 Click="RockPaperScissorButton"
                 Content="Paper"
-                Margin="5.6,4.8,5.2,5.2"
+                Margin="10.0,10.0,10.0,10.0" 
                 Grid.Row="4"
                 Grid.Column="3"
                 Grid.ColumnSpan="2"/>
         <Button x:Name="Scissors"
                 Click="RockPaperScissorButton"
                 Content="Scissors"
-                Margin="5.6,4.8,5.2,5.2"
+                Margin="10.0,10.0,10.0,10.0" 
                 Grid.Row="4"
                 Grid.Column="5"
                 Grid.ColumnSpan="2"/>
         <Button x:Name="Reset"
-                Click="RockPaperScissorButton"
+                Click="ResetButton"
                 Content="Reset"
-                Margin="5.6,4.8,5.2,5.2"
+                Margin="10.0,10.0,10.0,10.0" 
                 Grid.Row="1"
                 Grid.Column="5"
                 Grid.ColumnSpan="2"/>

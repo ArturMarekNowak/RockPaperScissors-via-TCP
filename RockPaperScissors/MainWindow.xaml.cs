@@ -27,6 +27,27 @@ namespace RockPaperScissors
 
         private void RockPaperScissorButton(object sender, RoutedEventArgs e)
         {
+            string playersChoice = null;
+
+            if (sender == Rock)
+                playersChoice = "Rock";
+            if (sender == Paper)
+                playersChoice = "Paper";
+            if (sender == Scissors)
+                playersChoice = "Scissors";
+
+            if (ResultPlayer.Content.ToString() == "0")
+            {
+                ResultPlayer.Content = $"-";
+            }
+            else
+            {
+                ResultPlayer.Content = $"{ResultPlayer.Content}{playersChoice}";
+            }
+        }
+
+        private void ResetButton(object sender, RoutedEventArgs e)
+        {
             //foo
         }
     }
