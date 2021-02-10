@@ -103,13 +103,13 @@ public class AsynchronousSocketListener
 
         // Read data from the client socket.
         int bytesRead = handler.EndReceive(ar);
-        Random rng = new Random(DateTimeOffset.Now.ToUnixTimeSeconds().GetHashCode());
-        int randInt = rng.Next(1, 3000);
+        Random rng = new Random(Guid.NewGuid().GetHashCode());
+        int randInt = rng.Next(1, 4);
         string response = "foo";
 
-        if (randInt < 1000)
+        if (randInt == 1)
             response = "Rock";
-        else if (randInt > 1000 && randInt < 2000)
+        else if (randInt == 2)
             response = "Paper";
         else
             response = "Scissors";
