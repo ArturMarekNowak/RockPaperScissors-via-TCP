@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\RockPaperScissorsCommand.cs" />
+    <Compile Include="Commands\ResetGameCommand.cs" />
+    <Compile Include="Networking\TcpClient.cs" />
     <Compile Include="ViewModel\GameViewModel.cs" />
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

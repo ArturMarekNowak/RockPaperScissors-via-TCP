@@ -12,6 +12,7 @@ namespace RockPaperScissorsTCP.Model
         private int _scoreAI = 0;
         private int _scorePlayer = 0;
         private string _lastResult = "-";
+        private string _playersChoice = "-";
         private string _addresIpV4 = "127.0.0.1";
         private int _port = 8080;
         public int scoreAI
@@ -53,6 +54,19 @@ namespace RockPaperScissorsTCP.Model
             }
         }
 
+        public string playersChoice
+        {
+            get
+            {
+                return _playersChoice;
+            }
+            set
+            {
+                _playersChoice = value;
+                OnPropertyChanged("playersChoice");
+            }
+        }
+
         public string addresIpV4
         {
             get
@@ -84,9 +98,10 @@ namespace RockPaperScissorsTCP.Model
         /// </summary>
         public Game(int o1, int o2, int o3, int o4, int port)
         {
-            _scoreAI = 0;
-            _scorePlayer = 0;
+            _scoreAI = 1;
+            _scorePlayer = 1;
             _lastResult = "-";
+            _playersChoice = "-";
             _addresIpV4 = o1.ToString() + "." + o2.ToString() + "." + o3.ToString() + "." + o4.ToString();
             _port = port;
         }

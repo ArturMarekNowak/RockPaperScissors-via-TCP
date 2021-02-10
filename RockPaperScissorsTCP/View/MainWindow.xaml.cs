@@ -30,21 +30,26 @@ namespace RockPaperScissorsTCP.View
         }
 
 
-        
+        /*
         private void RockPaperScissorsClick(object sender, RoutedEventArgs e)
         {
             if (sender == Rock)
+            {
                 ResultPlayer.Content = "Rock";
+            }
             if (sender == Paper)
                 ResultPlayer.Content = "Paper";
             if (sender == Scissors)
                 ResultPlayer.Content = "Scissors";
         }
+        */
 
+        /*
         private void ResetClick(object sender, RoutedEventArgs e)
         {
             //GameViewModel.Game.scoreAI = 0;
         }
+        */
         
 
 
