@@ -1,0 +1,143 @@
+﻿<Window x:Class="RockPaperScissorsTCP.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RockPaperScissorsTCP"
+        mc:Ignorable="d"
+        Title="Rock Paper Scissors" Height="550" Width="500">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="400*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="ConnectionLog"
+               Content="{Binding Game.addrIpV4}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontSize="10" 
+               Grid.Row="5"
+               Grid.Column="1" 
+               Margin="0.4,0.4,0,0.2" 
+               Grid.ColumnSpan="6" Width="400" Height="21"/>
+        <Label x:Name="You"
+               Content="You"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               FontSize="30" 
+               Grid.Row="1"
+               Grid.Column="1" 
+               Margin="3.4,17.4,6.6,17.8" Width="58" Height="52" RenderTransformOrigin="-0.262,0.408"/>
+        <Label x:Name="AI"
+               Content="AI"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               FontSize="30" 
+               Grid.Row="1"
+               Grid.Column="4" 
+               Margin="10.4,17.4,19.6,17.8" Width="38" Height="52" RenderTransformOrigin="0.702,0.562"/>
+        <Label x:Name="ScoreAI"
+               Content="{Binding Game.scoreAI}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               HorizontalContentAlignment="Center"
+               FontSize="30" 
+               Grid.Row="1"
+               Grid.Column="3" 
+               Margin="9.2,17.4,9.8,17.8" Width="49" Height="52"/>
+        <Label x:Name="ScorePlayer"
+               Content="{Binding Game.scorePlayer}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               HorizontalContentAlignment="Center"
+               FontSize="30" 
+               Grid.Row="1"
+               Grid.Column="2" 
+               Margin="9.2,17.4,9.8,17.8" Width="49" Height="52"/>
+        <Label x:Name="Seperator"
+               Content=":"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               HorizontalContentAlignment="Center"
+               FontSize="30" 
+               Grid.Row="1"
+               Grid.Column="2" 
+               Margin="43.4,17.4,43.6,17.8" Width="49" Height="52" Grid.ColumnSpan="2"/>
+        <Label x:Name="Result"
+               Content="{Binding Game.lastResult}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               HorizontalContentAlignment="Center"
+               FontSize="30" 
+               Grid.Row="2"
+               Grid.Column="2" 
+               Margin="10.0,10.0,10.0,10.0" 
+               Grid.ColumnSpan="4" Width="252" Height="52"/>
+        <Label x:Name="ResultPlayer"
+               Content="{Binding Game.playersChoice}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               FontSize="60" 
+               Grid.Row="3"
+               Grid.Column="1" 
+               Margin="0,0,0,0.0" 
+               Grid.ColumnSpan="3"/>
+        <Label x:Name="ResultAI"
+               Content="{Binding Game.aiChoice}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" 
+               FontSize="60" 
+               Grid.Row="3"
+               Grid.Column="4" 
+               Margin="0,0,0,0.0" 
+               Grid.ColumnSpan="3"/>
+        <Button x:Name="Rock"
+                Command="{Binding RockPaperScissorsCommand}"
+                CommandParameter="Rock"
+                Content="Rock"
+                Margin="10.0,10.0,10.0,10.0" 
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"/>
+        <Button x:Name="Paper"
+                Command="{Binding RockPaperScissorsCommand}"
+                CommandParameter="Paper"
+                Content="Paper"
+                Margin="10.0,10.0,10.0,10.0" 
+                Grid.Row="4"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"/>
+        <Button x:Name="Scissors"
+                Command="{Binding RockPaperScissorsCommand}"
+                CommandParameter="Scissors"
+                Content="Scissors"
+                Margin="10.0,10.0,10.0,10.0" 
+                Grid.Row="4"
+                Grid.Column="5"
+                Grid.ColumnSpan="2"/>
+        <Button x:Name="Reset"
+                Command="{Binding ResetCommand}"
+                Content="Reset"
+                Margin="10.0,10.0,10.0,10.0" 
+                Grid.Row="1"
+                Grid.Column="5"
+                Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
