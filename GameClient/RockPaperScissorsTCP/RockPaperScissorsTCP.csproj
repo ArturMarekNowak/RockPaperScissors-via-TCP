@@ -58,6 +58,7 @@
     <Compile Include="Commands\RockPaperScissorsCommand.cs" />
     <Compile Include="Commands\ResetGameCommand.cs" />
     <Compile Include="Networking\AsyncTcpClient.cs" />
+    <Compile Include="Networking\StateObject.cs" />
     <Compile Include="ViewModel\GameViewModel.cs" />
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

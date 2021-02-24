@@ -47,19 +47,6 @@ namespace RockPaperScissorsTCP.ViewModel
             private set;
         }
 
-        //TO DO!!!!!!!!!!!!!!!
-        public bool CanReset
-        {
-            get
-            {
-                if (Game == null)
-                {
-                    return false;
-                }
-                return true;
-                //return !String.IsNullOrWhiteSpace(Game.lastResult);
-            }
-        }
 
         /// <summary>
         /// Saves changes
@@ -84,7 +71,7 @@ namespace RockPaperScissorsTCP.ViewModel
             private set;
         }
 
-        public bool CanRockPaperScissors
+        public bool CanMakeAction
         {
             get
             {
@@ -107,48 +94,54 @@ namespace RockPaperScissorsTCP.ViewModel
             switch (parameter.ToString())
             {
                 case "Rock":
-                    Game.playersChoice = "Rock";
-                    Game.aiChoice = AsynchronousClient.StartClient(Game.addresIpV4, Game.port);
+                    Game.playersChoice = RoPaSc.Rock;
                     //Console.WriteLine(Game.addresIpV4);
                     break;
                 case "Paper":
-                    Game.playersChoice = "Paper";
-                    Game.aiChoice = AsynchronousClient.StartClient(Game.addresIpV4, Game.port);
+                    Game.playersChoice = RoPaSc.Paper;
                     break;
                 case "Scissors":
-                    Game.playersChoice = "Scissors";
-                    Game.aiChoice = AsynchronousClient.StartClient(Game.addresIpV4, Game.port);
+                    Game.playersChoice = RoPaSc.Scissors;
                     break;
             }
 
+            string responseFromServer = AsynchronousClient.StartClient(Game.addresIpV4, Game.port);
+
+            if(responseFromServer == "Rock")
+                Game.aiChoice = RoPaSc.Rock;
+            else if (responseFromServer == "Paper")
+                Game.aiChoice = RoPaSc.Paper;
+            else if (responseFromServer == "Scissors")
+                Game.aiChoice = RoPaSc.Scissors;
+
             if (Game.playersChoice == Game.aiChoice)
                 Game.lastResult = "Draw";
-            else if (Game.playersChoice == "Rock" && Game.aiChoice == "Paper")
+            else if (Game.playersChoice == RoPaSc.Rock && Game.aiChoice == RoPaSc.Paper)
             { 
                 Game.lastResult = "AI wins";
                 Game.scoreAI += 1;
             }
-            else if (Game.playersChoice == "Rock" && Game.aiChoice == "Scissors")
+            else if (Game.playersChoice == RoPaSc.Rock && Game.aiChoice == RoPaSc.Scissors)
             {
                 Game.lastResult = "You win";
                 Game.scorePlayer += 1;
             }
-            else if (Game.playersChoice == "Paper" && Game.aiChoice == "Rock")
+            else if (Game.playersChoice == RoPaSc.Paper && Game.aiChoice == RoPaSc.Rock)
             {
                 Game.lastResult = "You win";
                 Game.scorePlayer += 1;
             }
-            else if (Game.playersChoice == "Paper" && Game.aiChoice == "Scissors")
+            else if (Game.playersChoice == RoPaSc.Paper && Game.aiChoice == RoPaSc.Scissors)
             {
                 Game.lastResult = "AI wins";
                 Game.scoreAI += 1;
             }
-            else if (Game.playersChoice == "Scissors" && Game.aiChoice == "Rock")
+            else if (Game.playersChoice == RoPaSc.Scissors && Game.aiChoice == RoPaSc.Rock)
             {
                 Game.lastResult = "AI wins";
                 Game.scoreAI += 1;
             }
-            else if (Game.playersChoice == "Scissors" && Game.aiChoice == "Paper")
+            else if (Game.playersChoice == RoPaSc.Scissors && Game.aiChoice == RoPaSc.Paper)
             {
                 Game.lastResult = "You win";
                 Game.scorePlayer += 1;

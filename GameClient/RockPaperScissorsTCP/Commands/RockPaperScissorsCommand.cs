@@ -29,7 +29,7 @@ namespace RockPaperScissorsTCP.Commands
 
         public bool CanExecute(object parameter)
         {
-            return _gameViewModel.CanRockPaperScissors;
+            return _gameViewModel.CanMakeAction;
         }
 
         public void Execute(object parameter)

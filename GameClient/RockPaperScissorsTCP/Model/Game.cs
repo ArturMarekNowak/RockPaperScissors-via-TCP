@@ -7,15 +7,25 @@ using System.ComponentModel;
 
 namespace RockPaperScissorsTCP.Model
 {
+    public enum RoPaSc 
+    { 
+        None,
+        Rock,  
+        Paper, 
+        Scissors
+    };
+
     public class Game : INotifyPropertyChanged
     {
         private int _scoreAI = 0;
         private int _scorePlayer = 0;
         private string _lastResult = "-";
-        private string _playersChoice = "-";
-        private string _aiChoice = "-";
+        private RoPaSc _playersChoice = RoPaSc.None;
+        private RoPaSc _aiChoice = RoPaSc.None;
         private string _addresIpV4 = "127.0.0.1";
         private int _port = 3000;
+
+        #region gettersAndsetters
         public int scoreAI
         {
             get
@@ -55,7 +65,7 @@ namespace RockPaperScissorsTCP.Model
             }
         }
 
-        public string playersChoice
+        public RoPaSc playersChoice
         {
             get
             {
@@ -68,7 +78,7 @@ namespace RockPaperScissorsTCP.Model
             }
         }
 
-        public string aiChoice
+        public RoPaSc aiChoice
         {
             get
             {
@@ -107,6 +117,8 @@ namespace RockPaperScissorsTCP.Model
             }
         }
 
+        #endregion gettersAndsetters
+
         /// <summary>
         /// Initializes new instance of Game class
         /// </summary>
@@ -115,7 +127,7 @@ namespace RockPaperScissorsTCP.Model
             _scoreAI = 0;
             _scorePlayer = 0;
             _lastResult = "-";
-            _playersChoice = "-";
+            _playersChoice = RoPaSc.None;
             _addresIpV4 = o1.ToString() + "." + o2.ToString() + "." + o3.ToString() + "." + o4.ToString();
             _port = port;
         }

@@ -1,9 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\GameClient",
+    "\\GameClient\\RockPaperScissorsTCP",
+    "\\GameClient\\RockPaperScissorsTCP\\Commands",
+    "\\GameClient\\RockPaperScissorsTCP\\Model",
+    "\\GameClient\\RockPaperScissorsTCP\\Networking",
+    "\\GameClient\\RockPaperScissorsTCP\\View",
+    "\\GameClient\\RockPaperScissorsTCP\\ViewModel",
     "\\GameServer",
     "\\GameServer\\RockPaperScissorsTCPServer"
   ],
-  "SelectedNode": "\\GameServer\\RockPaperScissorsTCPServer\\Program.cs",
+  "SelectedNode": "\\GameClient\\RockPaperScissorsTCP\\ViewModel\\GameViewModel.cs",
   "PreviewInSolutionExplorer": false
 }
