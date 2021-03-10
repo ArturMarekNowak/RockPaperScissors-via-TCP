@@ -14,7 +14,7 @@
 This project is a simple rock paper scissors which utilizes TCP protocol for communication. The project was divided into two seperate Visual Studio projects, one for client and one for server. The GUI was created with WPF, and the structure of the project follows MVVM model. Client and server sockets implementation were taken from official Microsoft example. Project was created as a task for BIT college circle. 
 
 ## Screenshots
-Linkt to youtube presenting the project: https://youtu.be/VJTXGm1g460
+Link to youtube presenting the project: https://youtu.be/VJTXGm1g460
 
 It can be clearly seen that he behaviour of RNG on the AI side is really bad. However I haven't found yet what else could be done to improve it.
 
